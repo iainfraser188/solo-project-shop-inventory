@@ -1,6 +1,7 @@
 class Guitar:
-    def __init__(self,name,manufacturer,type,no_of_strings,production_date,stock_price,selling_price):
+    def __init__(self,name,colour,manufacturer,type,no_of_strings,production_date,stock_price,selling_price):
         self.name = name
+        self.colour = colour
         self.manufacturer = manufacturer
         self.type = type
         self.no_of_strings = no_of_strings
