@@ -11,7 +11,7 @@ class TestGuitar(unittest.TestCase):
 
 
     def test_guitar_has_name(self):
-        self.assertEqual("Les Paul",self.guitar_1.name)    
+        self.assertEqual("Les Paul",self.guitar_1.guitar_name)    
 
     def test_guitar_has_colour(self):
         self.assertEqual("Black",self.guitar_2.colour)

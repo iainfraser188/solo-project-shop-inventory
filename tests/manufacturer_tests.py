@@ -10,7 +10,7 @@ class TestManufacturer(unittest.TestCase):
 
 
     def test_manufacturer_has_name(self):
-        self.assertEqual("Taylor",self.manufacturer_1.name)
+        self.assertEqual("Taylor",self.manufacturer_1.company_name)
 
     def test_manufacturer_has_founded_date(self):
         self.assertEqual(1974,self.manufacturer_1.founded)    
