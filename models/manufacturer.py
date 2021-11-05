@@ -1,6 +1,6 @@
 class Manufacturer:
-    def __init__(self,name,product_name,founded,location):
+    def __init__(self,name,founded,location, id = None):
         self.name = name
-        self.product_name = product_name
         self.founded = founded
         self.location = location
+        self.id = id
