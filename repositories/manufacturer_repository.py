@@ -32,15 +32,10 @@ def select(id):
         manufacturer = Manufacturer(result['company_name'], result['founded'],result['location'],result['id'])
     return manufacturer   
 
-# def select(id):
-#     author = None
-#     sql = "SELECT * FROM authors WHERE id = %s"
-#     values = [id]
-#     result = run_sql(sql, values)[0]
-
-#     if result is not None:
-#         author = Author(result['first_name'], result['last_name'], result['id'] )
-#     return author
+def delete(id):
+    sql = "DELETE  FROM manufacturer WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
 
 def delete_all():
     sql = "DELETE FROM manufacturers"

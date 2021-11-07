@@ -34,16 +34,12 @@ def select(id):
         manufacturer = manufacturer_repository.select(result['manufacturer_id'])
         guitar = Guitar(result['guitar_name'],result['colour'],manufacturer,result['guitar_type'],result['no_of_strings'],result['production_date'],result['stock_price'],result['selling_price'])
     return guitar    
-# def select(id):
-#     book = None
-#     sql = "SELECT * FROM books WHERE id = %s"
-#     values = [id]
-#     result = run_sql(sql, values)[0]
 
-#     if result is not None:
-#         author = author_repository.select(result['author_id'])
-#         book = Book(result['title'], result['genre'], result['publisher'], author, result['id'] )
-#     return book
+def delete(id):
+    sql = "DELETE  FROM guitars WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
 def delete_all():
     sql = "DELETE FROM guitars"
     run_sql(sql)   
