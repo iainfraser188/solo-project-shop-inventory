@@ -1,11 +1,11 @@
 from flask import Flask, render_template
 from flask import Blueprint
 from models.guitar import Guitar
-import repositories.manufacturer_repository as manufacturer_repository
+import repositories.guitar_repository as guitar_repository
 
-manufacturers_blueprint = Blueprint("manufacturers", __name__)
+guitars_blueprint = Blueprint("guitars", __name__)
 
-@manufacturers_blueprint.route("/manufacturers")
-def manufacturers():
-    manufacturers = manufacturer_repository.select_all() 
-    return render_template("manu.html", all_manufacturers = manufacturers)
+@guitars_blueprint.route("/Guitars")
+def guitars():
+    guitars = guitar_repository.select_all() 
+    return render_template("guitar/index.html", guitars = guitars)

@@ -5,8 +5,7 @@ class TestManufacturer(unittest.TestCase):
     
     def setUp(self):
         self.manufacturer_1 = Manufacturer("Taylor",1974,"EL Cajon")
-        self.manufacturer_2 = Manufacturer("Gibson",1902, "Michigan")
-
+        self.manufacturer_2 = Manufacturer("Gibson",1902, "Michigan")4
 
 
     def test_manufacturer_has_name(self):

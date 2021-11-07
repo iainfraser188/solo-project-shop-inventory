@@ -8,4 +8,4 @@ manufacturers_blueprint = Blueprint("manufacturers", __name__)
 @manufacturers_blueprint.route("/manufacturers")
 def manufacturers():
     manufacturers = manufacturer_repository.select_all() 
-    return render_template("manu.html", all_manufacturers = manufacturers)
+    return render_template("manufacturer/index.html", all_manufacturers = manufacturers)

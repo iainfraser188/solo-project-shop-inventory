@@ -1,0 +1,13 @@
+{% extends 'base.html' %} 
+
+{% block content %} 
+ <h1>Guitars</h1>
+   <div>
+      {% for guitar in guitars %} 
+        {{guitar.guitar_name}}
+         
+      {% endfor %} 
+   </div>
+
+  
+{% endblock %} 

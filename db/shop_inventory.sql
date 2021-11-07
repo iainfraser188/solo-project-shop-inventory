@@ -13,7 +13,7 @@ CREATE TABLE guitars(
     id SERIAL PRIMARY KEY,
     guitar_name VARCHAR(255),
     colour VARCHAR(255),
-    manufacturer INT REFERENCES manufacturers(id),
+    manufacturer_id INT REFERENCES manufacturers(id),
     guitar_type VARCHAR(255),
     no_of_strings VARCHAR(255),
     production_date VARCHAR(255),
@@ -21,8 +21,3 @@ CREATE TABLE guitars(
     selling_price VARCHAR(255)
 
 );
-
-INSERT INTO manufacturers (company_name,founded,location)
-VALUES ('Gibson',1902,'Michigan');
-
-SELECT * FROM manufacturers
