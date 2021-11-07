@@ -4,3 +4,7 @@ class Manufacturer:
         self.founded = founded
         self.location = location
         self.id = id
+
+    def name(id):
+        
+        return "self.company_name"

@@ -21,3 +21,27 @@ def select_all():
         manufacturer = Manufacturer(row['company_name'],row['founded'],row['location'])
         manufacturers.append(manufacturer)
     return manufacturers
+
+def select(id):
+    manufacturer = None
+    sql = "SELECT * FROM manufacturers WHERE id = %s"
+    values = [id]
+    result = run_sql(sql,values)[0]
+
+    if result is not None:
+        manufacturer = Manufacturer(result['company_name'], result['founded'],result['location'],result['id'])
+    return manufacturer   
+
+# def select(id):
+#     author = None
+#     sql = "SELECT * FROM authors WHERE id = %s"
+#     values = [id]
+#     result = run_sql(sql, values)[0]
+
+#     if result is not None:
+#         author = Author(result['first_name'], result['last_name'], result['id'] )
+#     return author
+
+def delete_all():
+    sql = "DELETE FROM manufacturers"
+    run_sql(sql)

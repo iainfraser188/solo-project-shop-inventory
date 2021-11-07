@@ -4,8 +4,10 @@
 <h1>Manufacturers</h1>
  <div>
     {% for manufacturer in all_manufacturers %}
-      {{manufacturer.location}}
-
+      <div>Manufacturer:{{manufacturer.company_name}}<br>
+      EST:{{manufacturer.founded}}<br>
+      Company HQ:{{manufacturer.location}}<br>
+      </div><br>
     {% endfor %} 
  </div>
 

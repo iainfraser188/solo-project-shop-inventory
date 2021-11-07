@@ -4,6 +4,9 @@ from models.manufacturer import Manufacturer
 import repositories.guitar_repository as guitar_repostiory
 import repositories.manufacturer_repository as manufacturer_repository
 
+# clear tables
+guitar_repostiory.delete_all()
+manufacturer_repository.delete_all()
 # add manufacturers to database
 manufacturer1 = Manufacturer("Gibson",1902,"Michigan")
 manufacturer_repository.save(manufacturer1)
