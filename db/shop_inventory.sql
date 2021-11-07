@@ -4,9 +4,9 @@ DROP TABLE manufacturers;
 
 CREATE TABLE manufacturers(
     id SERIAL PRIMARY KEY,
-    company_name VARCHAR,
-    founded VARCHAR,
-    location VARCHAR
+    company_name VARCHAR(255),
+    founded VARCHAR(255),
+    location VARCHAR(255)
 );
 
 CREATE TABLE guitars(
@@ -21,3 +21,8 @@ CREATE TABLE guitars(
     selling_price VARCHAR(255)
 
 );
+
+INSERT INTO manufacturers (company_name,founded,location)
+VALUES ('Gibson',1902,'Michigan');
+
+SELECT * FROM manufacturers
