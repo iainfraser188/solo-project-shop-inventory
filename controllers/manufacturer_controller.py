@@ -1,7 +1,8 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,redirect, request
 from flask import Blueprint
 from models.manufacturer import Manufacturer
 import repositories.manufacturer_repository as manufacturer_repository
+import repositories.guitar_repository as guitar_repository
 
 manufacturers_blueprint = Blueprint("manufacturers", __name__)
 
@@ -9,3 +10,21 @@ manufacturers_blueprint = Blueprint("manufacturers", __name__)
 def manufacturers():
     manufacturers = manufacturer_repository.select_all() 
     return render_template("manufacturer/index.html", all_manufacturers = manufacturers)
+
+@manufacturers_blueprint.route("/manufacturers/<id>", methods = ['get'])
+def show_manufacturer(id):
+    manufacturer = manufacturer_repository.select(id)
+    guitars = guitar_repository.select_by_company(manufacturer)
+    return render_template('manufacturer/individual.html', manufacturer = manufacturer, guitars = guitars)
+
+ 
+@manufacturers_blueprint.route("/manufactures/<id>/delete", methods = ['POST','GET'])
+def delete_manufacturer(id):
+    manufacturer_repository.delete(id)
+    return redirect('/manufacturers')
+     
+@manufacturers_blueprint.route("/Guitars/new", methods=['GET'])
+def new_manufacturer():
+    guitars = guitar_repository.select_all()
+    return render_template("manufacturer/new.html", guitars = guitars)
+         

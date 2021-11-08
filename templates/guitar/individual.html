@@ -1,0 +1,19 @@
+{% extends 'base.html' %} 
+
+{% block content %} 
+<h1> {{guitar.guitar_name}}</h1>
+    <div class = "guitar_individual">
+     Colour:{{guitar.colour}}<br>
+     Company name:{{guitar.manufacturer.company_name}}<br>
+     Guitar type:{{guitar.guitar_type}}<br>
+     Strings:{{guitar.no_of_strings}}<br>
+     Year:{{guitar.production_date}}<br>
+     Stock Price £{{guitar.stock_price}}<br>
+     Selling Price £{{guitar.selling_price}}<br>
+    
+    </div>     
+    
+     <button  onclick="window.location.href='/Guitars/{{guitar.id}}/delete'"> delete</button>
+    
+
+{% endblock %}

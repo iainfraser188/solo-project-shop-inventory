@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, request
 from flask import Blueprint
 from controllers.manufacturer_controller import manufacturers
 from models.guitar import Guitar
@@ -29,4 +29,8 @@ def delete_guitar(id):
     guitar_repository.delete(id)
     return redirect('/Guitars')    
 
+@guitars_blueprint.route("/Guitars/new", methods=['GET'])
+def new_guitar():
+    manufacturers = manufacturer_repository.select_all()
+    return render_template("books/new.html", manufacturers = manufacturers)
     

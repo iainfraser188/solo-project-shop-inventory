@@ -18,7 +18,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        manufacturer = Manufacturer(row['company_name'],row['founded'],row['location'])
+        manufacturer = Manufacturer(row['company_name'],row['founded'],row['location'],row['id'])
         manufacturers.append(manufacturer)
     return manufacturers
 
@@ -33,10 +33,12 @@ def select(id):
     return manufacturer   
 
 def delete(id):
-    sql = "DELETE  FROM manufacturer WHERE id = %s"
+    sql = "DELETE FROM manufacturers WHERE id = %s"
     values = [id]
     run_sql(sql, values)
 
 def delete_all():
     sql = "DELETE FROM manufacturers"
     run_sql(sql)
+
+     
