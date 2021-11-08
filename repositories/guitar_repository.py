@@ -20,7 +20,7 @@ def select_all():
 
     for row in results:
         manufacturer = manufacturer_repository.select(row['manufacturer_id'])
-        guitar = Guitar(row['guitar_name'],row['colour'],manufacturer,row['guitar_type'],row['no_of_strings'],row['production_date'],row['stock_price'],row['selling_price'])
+        guitar = Guitar(row['guitar_name'],row['colour'],manufacturer,row['guitar_type'],row['no_of_strings'],row['production_date'],row['stock_price'],row['selling_price'],row['id'])
         guitars.append(guitar)
     return guitars    
 
@@ -32,11 +32,11 @@ def select(id):
     
     if result is not None:
         manufacturer = manufacturer_repository.select(result['manufacturer_id'])
-        guitar = Guitar(result['guitar_name'],result['colour'],manufacturer,result['guitar_type'],result['no_of_strings'],result['production_date'],result['stock_price'],result['selling_price'])
+        guitar = Guitar(result['guitar_name'],result['colour'],manufacturer,result['guitar_type'],result['no_of_strings'],result['production_date'],result['stock_price'],result['selling_price'],result['id'])
     return guitar    
 
 def delete(id):
-    sql = "DELETE  FROM guitars WHERE id = %s"
+    sql = "DELETE FROM guitars WHERE id = %s"
     values = [id]
     run_sql(sql, values)
 

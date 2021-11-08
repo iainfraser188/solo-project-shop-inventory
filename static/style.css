@@ -15,7 +15,7 @@
 nav li {
     background-color: aquamarine;
 }
-.products {
+/* .products {
     display: grid;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto auto;
@@ -25,6 +25,9 @@ nav li {
     
     
     
+} */
+.button{
+    background-color: cyan;
 }
 /* .guitars{
     display: grid;

@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 from flask import Blueprint
 from controllers.manufacturer_controller import manufacturers
 from models.guitar import Guitar
@@ -23,5 +23,10 @@ def new_guitar():
     manufacturers = manufacturer_repository.select_all()
     return render_template("guitar/new.html", all_manufacturers = manufacturers)
     
+
+@guitars_blueprint.route("/Guitars/<id>/delete", methods=['POST','GET'])
+def delete_guitar(id):
+    guitar_repository.delete(id)
+    return redirect('/Guitars')    
 
     

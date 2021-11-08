@@ -6,10 +6,10 @@
       {% for guitar in guitars %} 
        <div class = "products"> 
            
-         <button onclick="window.location.href= 'Guitars/{{guitar.id}}'">
+         <button class= "button" onclick="window.location.href= 'Guitars/{{guitar.id}}'">
            Guitar name:{{guitar.guitar_name}}<br>
            Guitar colour:{{guitar.colour}}<br>
-           {{guitar.id}}
+         
            <!-- Manufacturer:{{guitar.manufacturer.company_name}}<br>
            Type:{{guitar.guitar_type}}<br>
            No. of strings:{{guitar.no_of_strings}} <br>
