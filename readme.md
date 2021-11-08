@@ -1,1 +1,1 @@
-Shop Inventory Project
+Shop Inventory Project:

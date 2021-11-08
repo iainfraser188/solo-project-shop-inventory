@@ -2,17 +2,23 @@
 
 {% block content %} 
  <h1>Guitars</h1>
-   <div>
+   <div class="guitars">
       {% for guitar in guitars %} 
-       <div> Guitar name:{{guitar.guitar_name}}<br>
-        Guitar colour:{{guitar.colour}}<br>
-        Manufacturer:{{guitar.manufacturer.company_name}}<br>
-        Type:{{guitar.guitar_type}}<br>
-        No. of strings:{{guitar.no_of_strings}} <br>
-        Production date:{{guitar.production_date}}<br>
-        Stock Price: £{{guitar.stock_price}}<br>
-        Retail Price: £{{guitar.selling_price}} <br>
-       </div> <br>
+       <div class = "products"> 
+           
+         <button onclick="window.location.href= 'Guitars/{{guitar.id}}'">
+           Guitar name:{{guitar.guitar_name}}<br>
+           Guitar colour:{{guitar.colour}}<br>
+           {{guitar.id}}
+           <!-- Manufacturer:{{guitar.manufacturer.company_name}}<br>
+           Type:{{guitar.guitar_type}}<br>
+           No. of strings:{{guitar.no_of_strings}} <br>
+           Production date:{{guitar.production_date}}<br>
+           Stock Price: £{{guitar.stock_price}}<br>
+           Retail Price: £{{guitar.selling_price}} <br> -->
+         </button>
+          
+       </div><br>
       {% endfor %} 
    </div>
 
