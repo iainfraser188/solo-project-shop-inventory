@@ -34,7 +34,7 @@ def create_guitar():
     production_date = request.form['producction_date']
     stock_price = request.form['stock_price']
     selling_price = request.form['selling_price']
-    guitar = Guitar(guitar_name,colour,manufacturer,guitar_type,no_of_strings,production_date,stock_price,selling_price,)
+    guitar = Guitar(guitar_name,colour,manufacturer,guitar_type,no_of_strings,production_date,stock_price,selling_price)
     guitar_repository.save(guitar)
     return redirect('/Guitars')
     

@@ -2,7 +2,22 @@
 <h1> Add New Guitar </h1>
 <form action="/Guitars" method= "POST">
   <div>
-    <label for="Guitar name">Guitar name:</label>
+    <label>Guitar name:</label>
+    <select >
+        
+         <option >Les Paul</option>
+         <option >Stratocaster</option>
+         <option >Telecaster</option>
+         <option >Academy 100</option>
+         <option >Dreadnought</option>
+         <option >Academy 200</option>
+
+         
+    </select>
+    <!-- <input type="text" id="guitar name" name="guitar name" placeholder="Guitar Name" required autofocus> -->
+  </div>
+  <div>
+    <label >Colour:</label>
     <select >
         
          <option >Black</option>
@@ -14,12 +29,7 @@
          <option >Blue</option>
 
          
-    </select>
-    <!-- <input type="text" id="guitar name" name="guitar name" placeholder="Guitar Name" required autofocus> -->
-  </div>
-  <div>
-      <label for ="Colour"></label>
-  </div>
+    </select>  </div>
   <div>
       <label for= "Manufacturer">Manufacturer:</label>
       <select id ="manufacturer" name ="manufacturer_id">
@@ -29,8 +39,32 @@
       </select>
   </div>
   <div>
-      <label 
-  </div>
+      <label >Type:</label>
+      <select>
+      <option>Electric</option>
+      <option>Acoustic</option>
+      </select>
 
+  </div>
+  <div>
+      <label>Strings:</label>
+      <select>
+          <option>6</option>
+          <option>12</option>
+      </select>
+  </div>
+  <div>
+      <label>Production Date</label>
+      <input type="number" placeholder="Production Date" min=1920 max=2021>
+  </div>
+  <div>
+      <label>Stock Price:</label>
+      <input type = "number" placeholder = "Stock Price" min=100 max=1500>
+  </div>
+  <div>
+    <label>Retail Price:</label>
+    <input type = "number" placeholder = "Retail Price" min=100 max=2000>
+</div>
+<button type= "submit">Add Guitar</button>
 </form>
 {% endblock %}
