@@ -23,7 +23,7 @@ def delete_manufacturer(id):
     manufacturer_repository.delete(id)
     return redirect('/manufacturers')
      
-@manufacturers_blueprint.route("/Guitars/new", methods=['GET'])
+@manufacturers_blueprint.route("/manufacturers/new", methods=['GET'])
 def new_manufacturer():
     guitars = guitar_repository.select_all()
     return render_template("manufacturer/new.html", guitars = guitars)

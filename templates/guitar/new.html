@@ -1,4 +1,36 @@
 {% block content %} 
-new guitar form will go here
+<h1> Add New Guitar </h1>
+<form action="/Guitars" method= "POST">
+  <div>
+    <label for="Guitar name">Guitar name:</label>
+    <select >
+        
+         <option >Black</option>
+         <option >White</option>
+         <option >Sunburst</option>
+         <option >Tobaco Sunburst</option>
+         <option >Red</option>
+         <option >Greeen</option>
+         <option >Blue</option>
 
+         
+    </select>
+    <!-- <input type="text" id="guitar name" name="guitar name" placeholder="Guitar Name" required autofocus> -->
+  </div>
+  <div>
+      <label for ="Colour"></label>
+  </div>
+  <div>
+      <label for= "Manufacturer">Manufacturer:</label>
+      <select id ="manufacturer" name ="manufacturer_id">
+          {% for manufacturer in all_manufacturers %} 
+            <option value="{{manufacturer.id}}">{{manufacturer.company_name}}</option>
+          {% endfor %}  
+      </select>
+  </div>
+  <div>
+      <label 
+  </div>
+
+</form>
 {% endblock %}

@@ -21,7 +21,22 @@ def show_guitar(id):
 @guitars_blueprint.route("/Guitars/new", methods=['GET'])
 def new_guitar():
     manufacturers = manufacturer_repository.select_all()
-    return render_template("guitar/new.html", all_manufacturers = manufacturers)
+    guitars = guitar_repository.select_all()
+    return render_template("guitar/new.html", all_manufacturers = manufacturers, all_guitars=guitars)
+
+@guitars_blueprint.route("/guitars", methods = ['POST'])
+def create_guitar():
+    guitar_name = request.form['guitar_name']
+    colour = request.form['colour']
+    manufacturer = manufacturer_repository.select(request.form['manufacturer_id'])
+    guitar_type = request.form['guitar_type']
+    no_of_strings = request.form['no_of_strings']
+    production_date = request.form['producction_date']
+    stock_price = request.form['stock_price']
+    selling_price = request.form['selling_price']
+    guitar = Guitar(guitar_name,colour,manufacturer,guitar_type,no_of_strings,production_date,stock_price,selling_price,)
+    guitar_repository.save(guitar)
+    return redirect('/Guitars')
     
 
 @guitars_blueprint.route("/Guitars/<id>/delete", methods=['POST','GET'])
@@ -29,8 +44,3 @@ def delete_guitar(id):
     guitar_repository.delete(id)
     return redirect('/Guitars')    
 
-@guitars_blueprint.route("/Guitars/new", methods=['GET'])
-def new_guitar():
-    manufacturers = manufacturer_repository.select_all()
-    return render_template("books/new.html", manufacturers = manufacturers)
-    

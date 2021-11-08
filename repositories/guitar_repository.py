@@ -44,15 +44,15 @@ def delete_all():
     sql = "DELETE FROM guitars"
     run_sql(sql)   
 
-def select_by_company(manufacturer):
-    guitars = []
-    sql = "SELECT guitars.* FROM guitars INNER JOIN manufacturers ON guitars.manufacturer_id = guitar.id WHERE user_id = %s"
-    values = [manufacturer.id]  
-    results = run_sql(sql,values) 
+# def select_by_company(manufacturer):
+#     guitars = []
+#     sql = "SELECT guitars.* FROM guitars INNER JOIN manufacturers ON guitars.manufacturer_id = guitar.id WHERE user_id = %s"
+#     values = [manufacturer.id]  
+#     results = run_sql(sql,values) 
 
-    for row in results:
-        guitar = Guitar(row['guitar_name'],row['colour'])
-        guitars.append(guitar)
+#     for row in results:
+#         guitar = Guitar(row['guitar_name'],row['colour'])
+#         guitars.append(guitar)
 
-    return guitars   
+#     return guitars   
 

@@ -3,6 +3,9 @@
 {% block content %} 
  <h1>Guitars</h1>
    <div class="guitars">
+      <ul>
+         <li><a href="{{ url_for('guitars.new_guitar') }}">Add new guitar</a> </li>
+      </ul>
       {% for guitar in guitars %} 
        <div class = "products"> 
            

@@ -5,6 +5,4 @@ class Manufacturer:
         self.location = location
         self.id = id
 
-    def name(id):
-        
-        return "self.company_name"
+   
