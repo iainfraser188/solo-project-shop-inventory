@@ -1,21 +1,22 @@
 {% extends 'base.html' %} 
 
 {% block content %} 
+<div class="manufacturers-page">
 <h1>Manufacturers</h1>
-<button class ="new_button" onclick="wondow.location.href='/manufacturers/new'">Add New Manufacturer</button>
+<button class ="new_button" onclick="window.location.href='/manufacturers/new'">Add New Manufacturer</button>
 
  <div>
     {% for manufacturer in all_manufacturers %}
-    <button class="button" onclick="window.location.href ='manufacturers/{{manufacturers_id}}'">
-      Manufacturer:{{manufacturer.company_name}}<br>
-      EST:{{manufacturer.founded}}<br>
-      Company HQ:{{manufacturer.location}}<br>
+    <div>
+    <button class="button" onclick="window.location.href ='manufacturers/{{manufacturer.id}}'">
+      {{manufacturer.company_name}}<br>
+      
     </button>
-
+    </div>
     {% endfor %} 
  </div>
+ </div>
 
-<p>Manufacturers will go here</p>
 
 
 {% endblock %} 

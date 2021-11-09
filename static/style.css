@@ -1,37 +1,36 @@
-/* .head_bar{
-    display:grid;
-    flex-wrap: wrap;
-    margin : 2vh;
-    text-align : center;
 
-} */
+.head_bar{
+    background-color: rgb(49, 53, 59);
+    padding-bottom: -3vh;
+    }
 
-.menu{
-    text-align: left;
-
-
-}
-
-nav li {
-    background-color: aquamarine;
-}
-/* .products {
+.guitars{
+    
     display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto;
-    grid-gap: 3px;
-    border-radius: 1ex;
-    background-color: rgb(204, 161, 68);
-    
-    
-    
-} */
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 50px;
+}
+.guitars-page{
+    background-color: burlywood;
+}
 .button{
+    
     background-color: cyan;
 }
-/* .guitars{
-    display: grid;
-    grid-template-columns: 100px,auto,100px;
-    grid-template-rows: 100px,auto,100px;
-    background-color: blue;
-} */
+
+#homepage{
+    
+    background-image: url('pics/strings.jpeg');
+    
+    margin-top:-1.5em;
+}
+h1{
+    text-align: center;
+    color :red
+}
+a{
+    color:red
+}
+#company-name{
+    color:black;
+}

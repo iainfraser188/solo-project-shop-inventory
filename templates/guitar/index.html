@@ -1,28 +1,24 @@
 {% extends 'base.html' %} 
 
 {% block content %} 
- <h1>Guitars</h1>
- <button cless="new_button" onclick="window.location.href='Guitars/new'">Add New Guitar</button>
-   <div class="guitars">
+<section class="guitars-page">
+<h1>Guitars</h1>
+ <button class="new_button" onclick="window.location.href='Guitars/new'">Add New Guitar</button>
+   <div >
      
       {% for guitar in guitars %} 
-       <div class = "products"> 
+       <div class = "guitars"> 
            
          <button class= "button" onclick="window.location.href= 'Guitars/{{guitar.id}}'">
            Guitar name:{{guitar.guitar_name}}<br>
            Guitar colour:{{guitar.colour}}<br>
          
-           <!-- Manufacturer:{{guitar.manufacturer.company_name}}<br>
-           Type:{{guitar.guitar_type}}<br>
-           No. of strings:{{guitar.no_of_strings}} <br>
-           Production date:{{guitar.production_date}}<br>
-           Stock Price: £{{guitar.stock_price}}<br>
-           Retail Price: £{{guitar.selling_price}} <br> -->
+           
          </button>
           
        </div><br>
       {% endfor %} 
    </div>
 
-  
+</section>  
 {% endblock %} 
