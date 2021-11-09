@@ -39,6 +39,12 @@ def create_guitar():
     guitar_repository.save(guitar)
     return redirect('/Guitars')
 
+@guitars_blueprint.route("/Guitars/<id>/edit", methods=['GET','POST']) 
+def edit_book(id):
+    guitar = guitar_repository.select(id)
+    manufacturers = manufacturer_repository.select_all()
+    return render_template('guitar/edit.html', guitar = guitar, manufacturers = manufacturers)
+
 @guitars_blueprint.route("/Guitars/<id>", methods= ['POST'])
 def update_guitar(id):
     guitar_name = request.form['guitar_name']
@@ -50,11 +56,9 @@ def update_guitar(id):
     stock_price = request.form['stock_price']
     selling_price = request.form['selling_price']
     quantity = request.form['quantity']
-    guitar = Guitar(guitar_name,colour,manufacturer,guitar_type,no_of_strings,production_date,stock_price,selling_price,quantity)
-    guitar_repository.save(guitar)
-    guitar_repository.update(guitar)
-    return redirect('/Guitars')   
-    
+    guitar = Guitar(guitar_name,colour,manufacturer,guitar_type,no_of_strings,production_date,stock_price,selling_price,quantity,id)
+    guitar_repository.update_guitar(guitar)
+    return redirect("/Guitars")    
 
 @guitars_blueprint.route("/Guitars/<id>/delete", methods=['POST','GET'])
 def delete_guitar(id):
