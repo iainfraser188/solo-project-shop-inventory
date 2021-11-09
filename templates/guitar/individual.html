@@ -1,8 +1,9 @@
 {% extends 'base.html' %} 
 
 {% block content %} 
+<section class= individual-guitar>
 <h1> {{guitar.guitar_name}}</h1>
-    <div class = "guitar_individual">
+    
      Colour:{{guitar.colour}}<br>
      Company name:{{guitar.manufacturer.company_name}}<br>
      Guitar type:{{guitar.guitar_type}}<br>
@@ -11,9 +12,10 @@
      Stock Price £{{guitar.stock_price}}<br>
      Selling Price £{{guitar.selling_price}}<br>
     
-    </div>     
+        
     
-     <button  onclick="window.location.href='/Guitars/{{guitar.id}}/delete'"> delete</button>
-    
+     <button  class="delete-button" onclick="window.location.href='/Guitars/{{guitar.id}}/delete'"> delete</button>
+   
+</section>    
 
 {% endblock %}

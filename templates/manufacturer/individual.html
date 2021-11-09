@@ -1,15 +1,16 @@
 {% extends 'base.html' %} 
 
 {% block content %} 
- <h1 id="company-name">{{manufacturer.company_name}}</h1>
+
 <div class="individual_company">
     <h2> Company name: {{manufacturer.company_name}}</h2>
     <h2> EST: {{manufacturer.founded}}</h2> 
     <h2> Company HQ: {{manufacturer.location}}</h2>   
-</div>
+
 <form action = "/manufacturers/{{manufacturer.id}}/delete" method = "POST">
-<button  onclick="window.location.href='/manufacturers/{{manufacturer.id}}/delete'"> delete</button>
+<button  class ="delete-button" onclick="window.location.href='/manufacturers/{{manufacturer.id}}/delete'"> delete</button>
 </form>
+</div>
 
 
 {% endblock %} 

@@ -1,6 +1,7 @@
 {% block content %} 
-<h1> Add New Guitar </h1>
-<form action="/Guitars" method= "POST">
+
+<h1 class="new-guitar-head"> Add New Guitar </h1>
+<form  action="/Guitars" method= "POST">
   <div>
     <label for='guitar_name' name= 'guitar_name'>Guitar name:</label>
     <!-- <input type="text" name='name'> -->
@@ -67,4 +68,5 @@
 </div>
 <button type= "submit">Add Guitar</button>
 </form>
+
 {% endblock %}

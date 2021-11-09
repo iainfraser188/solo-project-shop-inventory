@@ -2,20 +2,31 @@
 .head_bar{
     background-color: rgb(49, 53, 59);
     padding-bottom: -3vh;
-    }
-
-.guitars{
+    border-radius: 5px;
     
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 50px 50px;
+    
+    }
+.title{
+    text-align: center;
+    color: crimson;
 }
-.guitars-page{
-    background-color: burlywood;
+.menu{
+    color:greenyellow;
+    
 }
+a{
+    color: greenyellow;
+}
+.li{
+    color:greenyellow
+}
+
+
 .button{
     
     background-color: cyan;
+    size: 20vh;
+    border-radius: 10px;
 }
 
 #homepage{
@@ -24,13 +35,16 @@
     
     margin-top:-1.5em;
 }
-h1{
-    text-align: center;
-    color :red
+.new_button{
+    background-color: darkgreen;
+    border-radius: 15px;
+    position: relative;
+    border: 3px solid gray;
+    left: 46%; 
 }
-a{
-    color:red
-}
-#company-name{
-    color:black;
+.delete-button{
+    background-color: crimson;
+    border-radius: 15px;
+    position:relative;
+    font-size: 20px;
 }

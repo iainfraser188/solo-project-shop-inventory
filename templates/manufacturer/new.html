@@ -3,11 +3,7 @@
 <form action="/manufacturers" method="POST">
     <div>
         <label for='manufacturer_name' name='manufacturer_name'>Company Name:</label>
-         <select name="manufacturer_name">
-             <option>Gibson</option>
-             <option>Taylor</option>
-             <option>Fender</option>
-         </select>
+         <input name="manufacturer_name" type="string" placeholder="Company Name">
     </div>
     <div>
         <label for='established'>EST:</label>
@@ -19,6 +15,5 @@
     </div>
     <button type="submit">Add Manufacturer</button>
 </form>
-new manufacturer form will go here
 
 {% endblock %}

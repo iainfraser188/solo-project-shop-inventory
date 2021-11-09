@@ -9,3 +9,4 @@ class Guitar:
         self.stock_price = stock_price
         self.selling_price = selling_price
         self.id = id
+        quantity=0
