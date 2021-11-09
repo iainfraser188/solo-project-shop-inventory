@@ -6,8 +6,8 @@ import repositories.manufacturer_repository as manufacturer_repository
 import repositories.guitar_repository as guitar_repository
 
 def save(guitar):
-    sql = "INSERT INTO guitars (guitar_name,colour,manufacturer_id,guitar_type,no_of_strings,production_date,stock_price,selling_price) VALUES (%s,%s,%s,%s,%s,%s,%s,%s) RETURNING *"
-    values = [guitar.guitar_name,guitar.colour,guitar.manufacturer.id,guitar.guitar_type,guitar.no_of_strings,guitar.production_date, guitar.stock_price,guitar.selling_price]
+    sql = "INSERT INTO guitars (guitar_name,colour,manufacturer_id,guitar_type,no_of_strings,production_date,stock_price,selling_price,quantity) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s) RETURNING *"
+    values = [guitar.guitar_name,guitar.colour,guitar.manufacturer.id,guitar.guitar_type,guitar.no_of_strings,guitar.production_date, guitar.stock_price,guitar.selling_price,guitar.quantity]
     results = run_sql(sql, values)
     id = results[0]['id']
     guitar.id = id
@@ -21,7 +21,7 @@ def select_all():
 
     for row in results:
         manufacturer = manufacturer_repository.select(row['manufacturer_id'])
-        guitar = Guitar(row['guitar_name'],row['colour'],manufacturer,row['guitar_type'],row['no_of_strings'],row['production_date'],row['stock_price'],row['selling_price'],row['id'])
+        guitar = Guitar(row['guitar_name'],row['colour'],manufacturer,row['guitar_type'],row['no_of_strings'],row['production_date'],row['stock_price'],row['selling_price'],row['quantity'],row['id'])
         guitars.append(guitar)
     return guitars    
 
@@ -33,7 +33,7 @@ def select(id):
     
     if result is not None:
         manufacturer = manufacturer_repository.select(result['manufacturer_id'])
-        guitar = Guitar(result['guitar_name'],result['colour'],manufacturer,result['guitar_type'],result['no_of_strings'],result['production_date'],result['stock_price'],result['selling_price'],result['id'])
+        guitar = Guitar(result['guitar_name'],result['colour'],manufacturer,result['guitar_type'],result['no_of_strings'],result['production_date'],result['stock_price'],result['selling_price'],result['quantity'],result['id'])
     return guitar    
 
 def delete(id):

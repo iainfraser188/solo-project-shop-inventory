@@ -30,7 +30,8 @@
          <option >Blue</option>
 
          
-    </select>  </div>
+    </select> 
+  </div>
   <div>
       <label for= "Manufacturer">Manufacturer:</label>
       <select id ="manufacturer" name ="manufacturer_id">
@@ -39,6 +40,7 @@
           {% endfor %}  
       </select>
   </div>
+
   <div>
       <label for ='guitar_type' >Type:</label>
       <select name='guitar_type'>
@@ -47,6 +49,7 @@
       </select>
 
   </div>
+
   <div>
       <label for ='no_of_strings'>Strings:</label>
       <select name='no_of_strings'>
@@ -54,18 +57,25 @@
           <option>12</option>
       </select>
   </div>
+
   <div>
       <label for='production_date'>Production Date</label>
       <input name ='production_date' type="number" placeholder="Production Date" min=1920 max=2021>
   </div>
+
   <div>
       <label for='stock_price'>Stock Price:</label>
       <input name ='stock_price'type = "number" placeholder = "Stock Price" min=100 max=1500>
   </div>
+
   <div>
     <label for='retail_price'>Retail Price:</label>
     <input name='selling_price'type = "number" placeholder = "Retail Price" min=100 max=2000>
-</div>
+  </div>
+  <div>
+    <label  for='quantity'>Quantity:</label>
+    <input name='quantity' type= "number" placeholder = "Quantity" max= 100>
+  </div>
 <button type= "submit">Add Guitar</button>
 </form>
 
