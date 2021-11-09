@@ -18,6 +18,7 @@ CREATE TABLE guitars(
     no_of_strings VARCHAR(255),
     production_date VARCHAR(255),
     stock_price VARCHAR(255),
-    selling_price VARCHAR(255)
+    selling_price VARCHAR(255),
+    quantity VARCHAR(255)
 
 );

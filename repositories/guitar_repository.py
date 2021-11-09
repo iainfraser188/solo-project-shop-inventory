@@ -45,6 +45,12 @@ def delete_all():
     sql = "DELETE FROM guitars"
     run_sql(sql)   
 
+def update(guitar):
+    sql = "update guitars SET(guitar_name,colour,guitar_type,no_of_strings,production_date,stock_price,selling_price,quantity,manufacturer_id) = (%s,%s,%s,%s,%s,%s,%s,%s,%s) WHERE id = %s"
+    values = [guitar.guitar_name,guitar.colour,guitar.guitar_type,guitar.no_of_strings,guitar.production_date,guitar.stock_price,guitar.selling_price,guitar.quantity,guitar.id]
+    print(values)
+    run_sql(sql,values)
+
 # def select_by_company(manufacturer):
 #     guitars = []
 #     sql = "SELECT guitars.* FROM guitars INNER JOIN manufacturers ON guitars.manufacturer_id = guitar.id WHERE user_id = %s"
