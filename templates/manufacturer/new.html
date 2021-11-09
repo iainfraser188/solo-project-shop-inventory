@@ -1,4 +1,24 @@
 {% block content %} 
+<h1>Add New Manufacturer</h1>
+<form action="/manufacturers" method="POST">
+    <div>
+        <label for='manufacturer_name' name='manufacturer_name'>Company Name:</label>
+         <select name="manufacturer_name">
+             <option>Gibson</option>
+             <option>Taylor</option>
+             <option>Fender</option>
+         </select>
+    </div>
+    <div>
+        <label for='established'>EST:</label>
+        <input name='established' type ='number' placeholder='Year established' min=1900 max=2021>
+    </div>
+    <div>
+        <label for='location'>HQ Location</label>
+        <input name ='location'type="string" placeholder='HQ Location'>
+    </div>
+    <button type="submit">Add Manufacturer</button>
+</form>
 new manufacturer form will go here
 
 {% endblock %}

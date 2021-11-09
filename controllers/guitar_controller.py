@@ -24,14 +24,14 @@ def new_guitar():
     guitars = guitar_repository.select_all()
     return render_template("guitar/new.html", all_manufacturers = manufacturers, all_guitars=guitars)
 
-@guitars_blueprint.route("/guitars", methods = ['POST'])
+@guitars_blueprint.route("/Guitars", methods = ['POST'])
 def create_guitar():
     guitar_name = request.form['guitar_name']
     colour = request.form['colour']
     manufacturer = manufacturer_repository.select(request.form['manufacturer_id'])
     guitar_type = request.form['guitar_type']
     no_of_strings = request.form['no_of_strings']
-    production_date = request.form['producction_date']
+    production_date = request.form['production_date']
     stock_price = request.form['stock_price']
     selling_price = request.form['selling_price']
     guitar = Guitar(guitar_name,colour,manufacturer,guitar_type,no_of_strings,production_date,stock_price,selling_price)

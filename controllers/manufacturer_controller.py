@@ -14,17 +14,25 @@ def manufacturers():
 @manufacturers_blueprint.route("/manufacturers/<id>", methods = ['get'])
 def show_manufacturer(id):
     manufacturer = manufacturer_repository.select(id)
-    guitars = guitar_repository.select_by_company(manufacturer)
-    return render_template('manufacturer/individual.html', manufacturer = manufacturer, guitars = guitars)
+    # guitars = guitar_repository.select_by_company(manufacturer)
+    return render_template('manufacturer/individual.html', manufacturer = manufacturer)
 
  
-@manufacturers_blueprint.route("/manufactures/<id>/delete", methods = ['POST','GET'])
+@manufacturers_blueprint.route("/manufacturers/<id>/delete",methods=['POST','GET'])
 def delete_manufacturer(id):
     manufacturer_repository.delete(id)
     return redirect('/manufacturers')
      
 @manufacturers_blueprint.route("/manufacturers/new", methods=['GET'])
 def new_manufacturer():
-    guitars = guitar_repository.select_all()
-    return render_template("manufacturer/new.html", guitars = guitars)
-         
+    manufacturers = manufacturer_repository.select_all()
+    return render_template("manufacturer/new.html",  manufacturers = manufacturers)
+
+@manufacturers_blueprint.route("/manufacturers", methods=['POST'])
+def create_manufacturer():
+       manufacturer_name=request.form['manufacturer_name']
+       established=request.form['established']
+       location=request.form['location'] 
+       manufacturer=Manufacturer(manufacturer_name,location,established)
+       manufacturer_repository.save(manufacturer)
+       return redirect('/manufacturers')

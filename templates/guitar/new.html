@@ -2,8 +2,9 @@
 <h1> Add New Guitar </h1>
 <form action="/Guitars" method= "POST">
   <div>
-    <label>Guitar name:</label>
-    <select >
+    <label for='guitar_name' name= 'guitar_name'>Guitar name:</label>
+    <!-- <input type="text" name='name'> -->
+    <select  name="guitar_name">
         
          <option >Les Paul</option>
          <option >Stratocaster</option>
@@ -14,18 +15,17 @@
 
          
     </select>
-    <!-- <input type="text" id="guitar name" name="guitar name" placeholder="Guitar Name" required autofocus> -->
   </div>
   <div>
-    <label >Colour:</label>
-    <select >
+    <label  for='colour'name='colour'>Colour:</label>
+    <select name='colour'>
         
          <option >Black</option>
          <option >White</option>
          <option >Sunburst</option>
          <option >Tobaco Sunburst</option>
          <option >Red</option>
-         <option >Greeen</option>
+         <option >Green</option>
          <option >Blue</option>
 
          
@@ -39,31 +39,31 @@
       </select>
   </div>
   <div>
-      <label >Type:</label>
-      <select>
+      <label for ='guitar_type' >Type:</label>
+      <select name='guitar_type'>
       <option>Electric</option>
       <option>Acoustic</option>
       </select>
 
   </div>
   <div>
-      <label>Strings:</label>
-      <select>
+      <label for ='no_of_strings'>Strings:</label>
+      <select name='no_of_strings'>
           <option>6</option>
           <option>12</option>
       </select>
   </div>
   <div>
-      <label>Production Date</label>
-      <input type="number" placeholder="Production Date" min=1920 max=2021>
+      <label for='production_date'>Production Date</label>
+      <input name ='production_date' type="number" placeholder="Production Date" min=1920 max=2021>
   </div>
   <div>
-      <label>Stock Price:</label>
-      <input type = "number" placeholder = "Stock Price" min=100 max=1500>
+      <label for='stock_price'>Stock Price:</label>
+      <input name ='stock_price'type = "number" placeholder = "Stock Price" min=100 max=1500>
   </div>
   <div>
-    <label>Retail Price:</label>
-    <input type = "number" placeholder = "Retail Price" min=100 max=2000>
+    <label for='retail_price'>Retail Price:</label>
+    <input name='selling_price'type = "number" placeholder = "Retail Price" min=100 max=2000>
 </div>
 <button type= "submit">Add Guitar</button>
 </form>

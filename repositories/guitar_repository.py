@@ -3,6 +3,7 @@ from db.run_sql import run_sql
 from models.guitar import Guitar
 from models.manufacturer import Manufacturer
 import repositories.manufacturer_repository as manufacturer_repository
+import repositories.guitar_repository as guitar_repository
 
 def save(guitar):
     sql = "INSERT INTO guitars (guitar_name,colour,manufacturer_id,guitar_type,no_of_strings,production_date,stock_price,selling_price) VALUES (%s,%s,%s,%s,%s,%s,%s,%s) RETURNING *"

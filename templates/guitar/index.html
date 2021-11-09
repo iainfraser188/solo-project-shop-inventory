@@ -2,10 +2,9 @@
 
 {% block content %} 
  <h1>Guitars</h1>
+ <button cless="new_button" onclick="window.location.href='Guitars/new'">Add New Guitar</button>
    <div class="guitars">
-      <ul>
-         <li><a href="{{ url_for('guitars.new_guitar') }}">Add new guitar</a> </li>
-      </ul>
+     
       {% for guitar in guitars %} 
        <div class = "products"> 
            

@@ -14,6 +14,8 @@ manufacturer2 = Manufacturer("Taylor",1974,"El Cajon")
 manufacturer_repository.save(manufacturer2)
 manufacturer3 = Manufacturer("Fender",1946,"Fullerton")
 manufacturer_repository.save(manufacturer3)
+manufacturer4 = Manufacturer('iain',1982,"falkirk")
+manufacturer_repository.save(manufacturer4)
 
 
 
