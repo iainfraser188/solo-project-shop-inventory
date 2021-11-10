@@ -32,9 +32,11 @@ a{
 
 #homepage{
     
-    background-image: url('pics/strings.jpeg');
+    background-repeat: no-repeat;
+    background-size: 190vh;
+    background-image: url('pics/guitar.jpg');
     
-    margin-top:-1.5em;
+
 }
 .new_button{
     background-color: darkgreen;
