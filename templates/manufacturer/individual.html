@@ -7,9 +7,10 @@
     <h2> EST: {{manufacturer.founded}}</h2> 
     <h2> Company HQ: {{manufacturer.location}}</h2>   
 
-<form action = "/manufacturers/{{manufacturer.id}}/delete" method = "POST">
-<button  class ="delete-button" onclick="window.location.href='/manufacturers/{{manufacturer.id}}/delete'"> delete</button>
-</form>
+ <button class="button" onclick="window.location.href='/manufacturers/{{manufacturer.id}}/edit'">Edit</button>
+
+<button  class ="delete-button" onclick="window.location.href='/manufacturers/{{manufacturer.id}}/delete'"> Delete</button>
+
 </div>
 
 

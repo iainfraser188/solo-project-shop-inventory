@@ -57,7 +57,7 @@ def update_guitar(id):
     quantity = request.form['quantity']
     guitar = Guitar(guitar_name,colour,manufacturer,guitar_type,no_of_strings,production_date,stock_price,selling_price,quantity,id)
     guitar_repository.update(guitar)
-    return redirect("/Guitars")    
+    return redirect('/Guitars')
 
 @guitars_blueprint.route("/Guitars/<id>/delete", methods=['POST','GET'])
 def delete_guitar(id):
