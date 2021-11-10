@@ -1,0 +1,32 @@
+
+.guitars-page{
+    background-color: burlywood;
+    
+}
+.guitars-header{
+    text-align: center;
+    font-size: 70px;
+    
+}
+.new-guitar-head>{
+    text-align: center;
+    background-color: darkgray;
+
+}
+.add-guitar{
+    text-align: center;
+    background-color: crimson;
+    font-size: 100px;
+
+}
+.individual-guitar{
+    
+    text-align: center;
+    background-color: darkgreen;
+    background-size: 100vh;
+    font-size: 40px;
+
+}
+.low-stock{
+    color:red
+}

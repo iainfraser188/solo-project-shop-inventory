@@ -1,0 +1,80 @@
+{% extends "base.html" %} 
+{% block content %} 
+
+<form action="/Guitars/{{guitar.id}}" method ="POST">
+    <div>
+        <label for ="guitar_name" name='guitar_name'>Guitar Name</label>
+        <select id ="guitar_name" name='guitar_name'>
+        
+            <option>Les Paul</option>
+            <option>Stratocaster</option>
+            <option>Telecaster</option>
+            <option>Academy 100</option>
+            <option>Dreadnought</option>
+            <option>Academy 200</option>
+   
+            
+       </select>
+    </div>
+    <div>
+        <label  for='colour'name='colour'>Colour:</label>
+        <select id = "colour" name='colour'>
+            
+             <option>Black</option>
+             <option>White</option>
+             <option>Sunburst</option>
+             <option>Tobaco Sunburst</option>
+             <option>Red</option>
+             <option>Green</option>
+             <option>Blue</option>
+    
+             
+        </select> 
+      </div>
+      <div>
+          <label for= "manufacturer_id" name = 'manufacturer_name'>Manufacturer:</label>
+          <select id ="manufacturer_id" name ='manufacturer_id' required autofocus>
+              {% for manufacturer in manufacturers %} 
+                <option value="{{manufacturer.id}}">{{manufacturer.company_name}}</option>
+              {% endfor %}  
+          </select>
+      </div>
+    
+      <div>
+          <label for ='guitar_type' name='guitar_type'>Type:</label>
+          <select id = "guitar_type" name='guitar_type' required autofocus>
+          <option>Electric</option>
+          <option>Acoustic</option>
+          </select>
+    
+      </div>
+    
+      <div>
+          <label for ='no_of_strings' name='no_of-strings'required autofocus>Strings:</label>
+          <select id = "no_of_strings" name='no_of_strings'>
+              <option value="no_of_strings">6</option>
+              <option>12</option>
+          </select>
+      </div>
+    
+      <div>
+          <label for='production_date' name='production_date'>Production Date</label>
+          <input id = "production_date" name ='production_date' type="number" placeholder="Production Date" min=1920 max=2021 value="production_date" required autofocus>
+      </div>
+    
+      <div>
+          <label for='stock_price' name='stock_price'>Stock Price:</label>
+          <input id = "stock_price" name ='stock_price'type = "number" placeholder = "Stock Price" min=100 max=1500 value="stock_price"required autofocus>
+      </div>
+    
+      <div>
+        <label for='retail_price' name='selling_price'>Retail Price:</label>
+        <input id = "retail_price" value ="retail_price"name='selling_price'type = "number" placeholder = "Retail Price" min=100 max=2000 required autofocus>
+      </div>
+      <div>
+        <label  for='quantity' name='quantity'>Quantity:</label>
+        <input id = "quantity" value="quantity" name='quantity' type= "number" placeholder = "Quantity" max= 100 required autofocus>
+      </div>
+    <button type= "submit">Update Guitar</button>
+</form>
+{% endblock %} 
