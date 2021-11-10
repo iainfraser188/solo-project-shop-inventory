@@ -9,9 +9,15 @@
      Guitar type:{{guitar.guitar_type}}<br>
      Strings:{{guitar.no_of_strings}}<br>
      Year:{{guitar.production_date}}<br>
-     Stock Price £{{guitar.stock_price}}<br>
-     Selling Price £{{guitar.selling_price}}<br>
-     Quantity: {{guitar.quantity}}<br>
+     Stock Price: £{{guitar.stock_price}}<br>
+     Selling Price:£{{guitar.selling_price}}<br>
+    <div {% if guitar.quantity <= 3%} style="color:red"
+    {%else%} style='color:black'
+    {%endif%}>
+    quantity:{{guitar.quantity}}
+    </div>
+
+     
     
         
     <button class="button" onclick="window.location.href='/Guitars/{{guitar.id}}/edit'">Edit</button>

@@ -1,6 +1,5 @@
 from flask import Flask, render_template, redirect, request
 from flask import Blueprint
-from controllers.manufacturer_controller import manufacturers
 from models.guitar import Guitar
 import repositories.guitar_repository as guitar_repository
 import repositories.manufacturer_repository as manufacturer_repository
@@ -12,7 +11,7 @@ def guitars():
     guitars = guitar_repository.select_all() 
     return render_template("guitar/index.html", guitars = guitars)
 
-@guitars_blueprint.route("/Guitars/<id>",methods=['GET'] ) 
+@guitars_blueprint.route("/Guitars/<id>", methods=['GET']) 
 def show_guitar(id):
     guitar = guitar_repository.select(id) 
     return render_template('guitar/individual.html', guitar = guitar)  
@@ -39,8 +38,8 @@ def create_guitar():
     guitar_repository.save(guitar)
     return redirect('/Guitars')
 
-@guitars_blueprint.route("/Guitars/<id>/edit", methods=['GET','POST']) 
-def edit_book(id):
+@guitars_blueprint.route("/Guitars/<id>/edit", methods=['GET']) 
+def edit_guitar(id):
     guitar = guitar_repository.select(id)
     manufacturers = manufacturer_repository.select_all()
     return render_template('guitar/edit.html', guitar = guitar, manufacturers = manufacturers)
@@ -57,7 +56,7 @@ def update_guitar(id):
     selling_price = request.form['selling_price']
     quantity = request.form['quantity']
     guitar = Guitar(guitar_name,colour,manufacturer,guitar_type,no_of_strings,production_date,stock_price,selling_price,quantity,id)
-    guitar_repository.update_guitar(guitar)
+    guitar_repository.update(guitar)
     return redirect("/Guitars")    
 
 @guitars_blueprint.route("/Guitars/<id>/delete", methods=['POST','GET'])
