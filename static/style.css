@@ -52,3 +52,9 @@ a{
     position:relative;
     font-size: 20px;
 }
+.update_button{
+    font-size: 40px;
+    float:center;
+    background-color: darkgreen;
+    border-radius: 10px;
+}

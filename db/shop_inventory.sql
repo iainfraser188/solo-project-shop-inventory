@@ -13,7 +13,7 @@ CREATE TABLE guitars(
     id SERIAL PRIMARY KEY,
     guitar_name VARCHAR(255),
     colour VARCHAR(255),
-    manufacturer_id INT REFERENCES manufacturers(id) ON DELETE CASCADE,
+    manufacturer_id INT REFERENCES manufacturers(id),
     guitar_type VARCHAR(255),
     no_of_strings INT,
     production_date INT,

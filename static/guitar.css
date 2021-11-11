@@ -13,9 +13,10 @@
     background-color: darkgray;
 
 }
-.new-guitar{
-    background-color: darkgray;
+.add-guitar{
+    background-color: rgb(66, 6, 6);
     margin: 0;
+    font-size: 40px;
 }
 .individual-guitar{
     
@@ -24,4 +25,9 @@
     background-size: 100vh;
     font-size: 40px;
 
+}
+.edit_guitar{
+    font-size: 40px;
+    background-color: rgb(49, 53, 59);
+    color:greenyellow
 }

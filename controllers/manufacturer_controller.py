@@ -38,18 +38,19 @@ def create_manufacturer():
        return redirect('/manufacturers')
 
 
-@manufacturers_blueprint.route("/manufacturers/<id>/edit", methods = ['GET','POST'])
+@manufacturers_blueprint.route("/manufacturers/<id>/edit", methods = ['GET'])
 def edit_manufacturer(id):
     manufacturer = manufacturer_repository.select(id) 
     return render_template('/manufacturer/edit.html', manufacturer = manufacturer)
 
-@manufacturers_blueprint.route("/manufaturers/<id>",methods=['POST','GET'])
+@manufacturers_blueprint.route("/manufacturers/<id>",methods=['POST'])
 def update_manufacturer(id):
     company_name = request.form['company_name']
     founded = request.form['founded']
     location = request.form['location']
     manufacturer = Manufacturer(company_name,founded,location,id)
     manufacturer_repository.update(manufacturer)
+    print(manufacturer)
     return redirect('/manufacturers')
 
 

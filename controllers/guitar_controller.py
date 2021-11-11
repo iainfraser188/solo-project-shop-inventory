@@ -3,6 +3,7 @@ from flask import Blueprint
 from models.guitar import Guitar
 import repositories.guitar_repository as guitar_repository
 import repositories.manufacturer_repository as manufacturer_repository
+import pdb
 
 guitars_blueprint = Blueprint("guitars", __name__)
 
@@ -50,12 +51,13 @@ def update_guitar(id):
     colour = request.form['colour']
     manufacturer = manufacturer_repository.select(request.form['manufacturer_id'])
     guitar_type = request.form['guitar_type']
-    no_of_strings = request.form['no_of_strings']
+    no_of_strings = int(request.form['no_of_strings'])
     production_date = request.form['production_date']
     stock_price = request.form['stock_price']
     selling_price = request.form['selling_price']
     quantity = request.form['quantity']
     guitar = Guitar(guitar_name,colour,manufacturer,guitar_type,no_of_strings,production_date,stock_price,selling_price,quantity,id)
+
     guitar_repository.update(guitar)
     return redirect('/Guitars')
 
