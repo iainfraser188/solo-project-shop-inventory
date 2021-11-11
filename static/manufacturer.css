@@ -1,8 +1,10 @@
 .individual_company{
     text-align: center;
-    background-color: rgb(8,138,8);
-    background-size: 100vh;
-    border-radius: 15px
+    background: rgb(25,131,9);
+    background: linear-gradient(180deg, rgba(25,131,9,1) 0%, rgba(0,0,0,1) 100%);    background-size: 100vh;
+    border-radius: 15px;
+    text-shadow: 2px 2px rgb(209, 76, 76);
+    
 }
 #company-name{
     background-color: darkgreen;
@@ -10,9 +12,20 @@
 }
 .manufacturers-page{
     background-color: darkseagreen;
+    
 }
 .new_manufacturer{
+    text-shadow: 2px 2px rgb(209, 76, 76);
     font-size: 60px;
+    background: rgb(25,131,9);
+    background: linear-gradient(180deg, rgba(25,131,9,1) 0%, rgba(0,0,0,1) 100%);    background-size: 100vh;
     
 
+}
+.edit-manufacturer{
+    background: rgb(25,131,9);
+    background: linear-gradient(180deg, rgba(25,131,9,1) 0%, rgba(0,0,0,1) 100%);    background-size: 100vh;
+    border-radius: 15px;
+    font-size: 40px;
+    text-shadow: 2px 2px rgb(64, 64, 204);
 }

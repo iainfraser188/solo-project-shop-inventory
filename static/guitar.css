@@ -9,26 +9,29 @@
     text-align: center;
     font-size: 70px;
     text-shadow: 2px 2px #ff0000;  
-    color:  
+    margin-bottom: 0;
+    margin-top: 0;
+     
 }
 .new-guitar-head{
     text-align: center;
     background-color: darkgray;
 
 }
-.add_guitar{
-    background-color: rgb(66, 6, 6);
+.add-guitar{
     margin: 0;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    text-align: center;
     font-size: 40px;
+    text-shadow: 2px 2px firebrick;
 }
 .individual-guitar{
     border-radius: 15px;
     text-align: center;
-    background-color: darkgreen;
     background-size: 100vh;
     font-size: 40px;
-    
-
+    background-color: rgba(25,131,9,1);
 }
 .individual-guitar>h1{
     text-shadow: 2px 2px deepskyblue;
@@ -43,7 +46,7 @@
 }
 .guitars{
     display:grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 3fr);
     
 }
 .low-stock{

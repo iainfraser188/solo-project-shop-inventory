@@ -1,7 +1,7 @@
 {% extends 'base.html' %} 
 {% block content %} 
 
-<form action="/manufacturers/{{manufacturer.id}}" method = "POST">
+<form class = "edit-manufacturer" action="/manufacturers/{{manufacturer.id}}" method = "POST">
     <div>
         <label name="company_name">Company Name:</label>
         <input type="text" name="company_name">
@@ -15,6 +15,6 @@
         <label name = "location">HQ:</label>
         <input type = "text" name ="location">
     </div>
-    <button type ="submit">Update manufacturer</button>
+    <button class="update_button" type ="submit">Update manufacturer</button>
 </form>
 {% endblock %} 
