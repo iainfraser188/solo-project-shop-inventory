@@ -1,7 +1,8 @@
 .individual_company{
     text-align: center;
-    background-color: darkgreen;
+    background-color: rgb(8,138,8);
     background-size: 100vh;
+    border-radius: 15px
 }
 #company-name{
     background-color: darkgreen;
@@ -9,4 +10,9 @@
 }
 .manufacturers-page{
     background-color: darkseagreen;
+}
+.new_manufacturer{
+    font-size: 60px;
+    
+
 }

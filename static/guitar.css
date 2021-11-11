@@ -1,33 +1,52 @@
 
 .guitars-page{
-    background-color: burlywood;
-    
+    margin:0;
+    border-radius:15px;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
 }
 .guitars-header{
     text-align: center;
     font-size: 70px;
-    
+    text-shadow: 2px 2px #ff0000;  
+    color:  
 }
 .new-guitar-head{
     text-align: center;
     background-color: darkgray;
 
 }
-.add-guitar{
+.add_guitar{
     background-color: rgb(66, 6, 6);
     margin: 0;
     font-size: 40px;
 }
 .individual-guitar{
-    
+    border-radius: 15px;
     text-align: center;
     background-color: darkgreen;
     background-size: 100vh;
     font-size: 40px;
+    
 
+}
+.individual-guitar>h1{
+    text-shadow: 2px 2px deepskyblue;
 }
 .edit_guitar{
     font-size: 40px;
     background-color: rgb(49, 53, 59);
     color:greenyellow
+}
+.new_colour{
+    background-color: darkgreen;
+}
+.guitars{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+}
+.low-stock{
+    color:red;
+    text-decoration : underline;
 }

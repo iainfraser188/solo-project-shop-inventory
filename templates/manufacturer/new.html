@@ -1,5 +1,8 @@
+{% extends 'base.html' %}
 {% block content %} 
+
 <h1>Add New Manufacturer</h1>
+<div class ="new_manufacturer">
 <form action="/manufacturers" method="POST">
     <div>
         <label for='manufacturer_name' name='manufacturer_name'>Company Name:</label>
@@ -13,7 +16,7 @@
         <label for='location'>HQ Location</label>
         <input name ='location'type="string" placeholder='HQ Location'>
     </div>
-    <button type="submit">Add Manufacturer</button>
+    <button class= "add=button" type="submit">Add Manufacturer</button>
 </form>
-
+</div>
 {% endblock %}
