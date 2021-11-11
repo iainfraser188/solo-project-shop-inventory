@@ -4,17 +4,17 @@
 <form class = "edit-manufacturer" action="/manufacturers/{{manufacturer.id}}" method = "POST">
     <div>
         <label name="company_name">Company Name:</label>
-        <input type="text" name="company_name">
+        <input type="text" name="company_name" placeholder={{manufacturer.company_name}}>
     </div>
     <div>
         <label name = "founded">EST:</label>
-        <input type="text" name="founded">
+        <input type="text" name="founded" placeholder={{manufacturer.founded}}>
 
     </div>
     <div>
         <label name = "location">HQ:</label>
-        <input type = "text" name ="location">
+        <input type = "text" name ="location" placeholder="{{manufacturer.location}}">
     </div>
-    <button class="update_button" type ="submit">Update manufacturer</button>
+    <button class="update_button" type ="submit" >Update manufacturer</button>
 </form>
 {% endblock %} 

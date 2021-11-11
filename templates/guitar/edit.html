@@ -4,11 +4,11 @@
 <form class="edit_guitar"action="/Guitars/{{guitar.id}}" method ="POST">
     <div>
         <label for='guitar_name' name= 'guitar_name'>Guitar name:</label>
-    <input type="text" name='guitar_name'>
+    <input type="text" name='guitar_name' placeholder="{{guitar.guitar_name}}">
     
   </div>
   <div>
-    <label  for='colour'name='colour'>Colour:</label>
+    <label  for='colour'name='colour' placeholder="{{guitar.colour}}">Colour:</label>
     <select name='colour'>
         
          <option >Black</option>
@@ -24,7 +24,7 @@
       </div>
       <div>
           <label for= "manufacturer_id" name = 'manufacturer_id'>Manufacturer:</label>
-          <select id ="manufacturer_id" name ='manufacturer_id' required autofocus>
+          <select id ="manufacturer_id" name ='manufacturer_id' placeholder="{{guitar.manufacturer_name}}"required autofocus>
               {% for manufacturer in manufacturers %} 
                 <option value="{{manufacturer.id}}">{{manufacturer.company_name}}</option>
               {% endfor %}  
@@ -33,7 +33,7 @@
     
       <div>
           <label for ='guitar_type' name='guitar_type'>Type:</label>
-          <select id = "guitar_type" name='guitar_type' required autofocus>
+          <select id = "guitar_type" name='guitar_type' placeholder="{{guitar.guitar_type}}"required autofocus>
           <option>Electric</option>
           <option>Acoustic</option>
           </select>
@@ -42,7 +42,7 @@
     
       <div>
           <label for ='no_of_strings' name='no_of_strings'required autofocus>Strings:</label>
-          <select id = "no_of_strings" name='no_of_strings'>
+          <select id = "no_of_strings" name='no_of_strings'placeholder="{{guitar.no_of_strings}}">
               <option value="6">6</option>
               <option value="12">12</option>
           </select>
@@ -50,21 +50,21 @@
     
       <div>
           <label for='production_date' name='production_date'>Production Date</label>
-          <input id = "production_date" name ='production_date' type="number" placeholder="Production Date" min=1920 max=2021 value="production_date" required autofocus>
+          <input id = "production_date" name ='production_date' type="number" placeholder="{{guitar.production_date}}" min=1920 max=2021 value="production_date" required autofocus>
       </div>
     
       <div>
           <label for='stock_price' name='stock_price'>Stock Price:</label>
-          <input id = "stock_price" name ='stock_price'type = "number" placeholder = "Stock Price" min=100 max=1500 value="stock_price"required autofocus>
+          <input id = "stock_price" name ='stock_price'type = "number" placeholder="{{guitar.stock_price}}" min=100 max=1500 value="stock_price"required autofocus>
       </div>
     
       <div>
         <label for='retail_price' name='selling_price'>Retail Price:</label>
-        <input id = "retail_price" value ="retail_price"name='selling_price'type = "number" placeholder = "Retail Price" min=100 max=2000 required autofocus>
+        <input id = "retail_price" value ="retail_price"name='selling_price'type = "number" placeholder="{{guitar.selling_price}}" min=100 max=2000 required autofocus>
       </div>
       <div>
         <label  for='quantity' name='quantity'>Quantity:</label>
-        <input id = "quantity" value="quantity" name='quantity' type= "number" placeholder = "Quantity" max= 100 required autofocus>
+        <input id = "quantity" value="quantity" name='quantity' type= "number" placeholder="{{guitar.quantity}}" max= 100 required autofocus>
       </div>
     <button class= "update_button" type= "submit">Update Guitar</button>
 </form>
